@@ -9,7 +9,7 @@ const controllerForos = {};
 controllerForos.getAllForos = async (req, res) => {
   const foros = await Foro.findAll();
 
-  res.render("foros", { titleForos: "Foros", results: foros });
+  res.render("foro", { titleForos: "Foros", results: foros });
 };
 
 //TODO: GET
