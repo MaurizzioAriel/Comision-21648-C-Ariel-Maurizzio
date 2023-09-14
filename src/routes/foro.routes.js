@@ -6,7 +6,7 @@ const Foro = require("../models/foro.models");
 //userRoutes.get("/user", controllerUsers.indexUsers);
 
 //ruta GET ALL FOROS
-foroRoutes.get("/user", controllerForos.getAllForos);
+foroRoutes.get("/foro", controllerForos.getAllForos);
 
 //ruta GET USER BY ID
 // userRoutes.get("/user/:id", controllerUsers.getUserById);
