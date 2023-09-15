@@ -2,3 +2,8 @@ body{
     font-family: 'Roboto Slab', serif;
 ;
 }
+
+.boton-inicio{
+    display: flex;
+    justify-content: center;
+}
