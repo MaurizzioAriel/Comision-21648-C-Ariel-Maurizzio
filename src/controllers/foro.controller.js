@@ -2,9 +2,9 @@ const Foro = require("../models/foro.models");
 const controllerForos = {};
 
 //TODO: INDEX USER
-// controllerUsers.indexUsers = (req, res) => {
-//   res.render("user", { titleuser: "Usuarios" });
-// };
+  controllerForos.indexForos = (req, res) => {
+  res.render("foro", { titleforo: "Foros" });
+ };
 //TODO: GETALL
 controllerForos.getAllForos = async (req, res) => {
   const foros = await Foro.findAll();
