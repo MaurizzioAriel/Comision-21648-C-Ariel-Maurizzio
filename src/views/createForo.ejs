@@ -1,0 +1,55 @@
+<%- include("partials/head")%>
+
+<body>
+  <div class="container mt-4">
+    <div class="card border-secondary">
+      <div class="card-header">Nuevo Post</div>
+      <div class="card-body">
+        <form action="/saveForo" method="post">
+          <div class="mb-3">
+            <label for="foro" class="form-label">Usuario</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="Nombre del Usuario"
+              tabindex="1"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="user" class="form-label">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email del usuario"
+              tabindex="2"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="user" class="form-label">Texto:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="email"
+              name="texto"
+              placeholder="Redacta un texto"
+              tabindex="2"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary" tabindex="3">
+            Guardar
+          </button>
+          <a href="/" class="btn btn-secondary">Cancelar</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+<%- include("partials/footer")%>
