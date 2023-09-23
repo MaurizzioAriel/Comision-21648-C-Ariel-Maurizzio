@@ -1,11 +1,12 @@
 <%- include("partials/head")%>
 
+<% if(foro) { %>
 <body>
   <div class="container mt-4">
     <div class="card border-secondary ">
       <div class="card-header">Nuevo Post</div>
       <div class="card-body">
-        <form action="/saveForo" method="post">
+        <form action="/updateForo" method="post">
           <div class="mb-3">
             <label for="foro" class="form-label">Titulo</label>
             <input
