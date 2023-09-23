@@ -13,7 +13,7 @@ foroRoutes.get("/foro", controllerForos.getAllForos);
 
 //ruta POST (crear foro)
 foroRoutes.get("/createForo", controllerForos.formCreateForo);
-foroRoutes.post("/saveForo", controllerForos.postForos);
+foroRoutes.post("/saveForo", controllerForos.postForo);
 
 //ruta PUT (actualizar al foro)
 foroRoutes.get("/editForo/:id", controllerForos.formEditForo);

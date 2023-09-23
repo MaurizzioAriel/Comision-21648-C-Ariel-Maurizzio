@@ -33,26 +33,28 @@ controllerForos.formCreateForo = (req, res) => {
 };
 
 //PARA CREAR EL FORO
-controllerForos.postForos = async (req, res) => {
-  const { firstName, email } = req.body;
+controllerForos.postForo = async (req, res) => {
+  const { firstName, Titulo, Texto, Imagen } = req.body;
 
   //validacion para los datos del body
-  if (!firstName || !email)
+  if (!firstName || !Titulo || !Texto || !Imagen)
     return res.status(400).send({
-      message: "Por favor ingresar los datos del nombre y apellido del usuario",
+      message: "Por favor ingresar los datos correspondientes",
     });
   //manejamos el error con trycatch
   try {
     const foro = {
       firstName: firstName,
-      email: email,
+      Titulo: Titulo,
+      Texto: Texto,
+      Imagen: Imagen,
     };
     if (!foro) {
       return res
         .status(409)
-        .send({ message: "Usuario ya existe en la base de datos" });
+        .send({ message: "El post ya existe en la base de datos" });
     } else {
-      const newForo = await Foro.create(foro);
+      const newforo = await Foro.create(foro);
       return res.redirect("/foro");
       //res.send({ message: "Usuario creado con exito" });
     }
