@@ -12,8 +12,8 @@
             <input
               type="text"
               class="form-control"
-              id="firstName"
-              name="firstName"
+              id="<%=foro.Titulo%>"
+              name="Titulo"
               placeholder="Titulo del post"
               tabindex="1"
               required
@@ -21,14 +21,14 @@
           </div>
           <div class="input-group mt-4">
             <span class="input-group-text">Ingresa el texto</span>
-            <textarea class="form-control" aria-label="With textarea" id="Texto" name="Texto" placeholder="Escribi aqui"  tabindex="2"></textarea>
+            <textarea class="form-control" aria-label="With textarea" id="<%=foro.Texto%>" name="Texto" placeholder="Escribi aqui"  tabindex="2"></textarea>
           </div>
           <div class="mt-4">
             <label for="foro" class="form-label">Imagen</label>
             <input
               type="text"
               class="form-control"
-              id="Imagen"
+              id="<%=foro.Imagen%>"
               name="Imagen"
               placeholder="url de la imagen"
               tabindex="2"

@@ -35,3 +35,7 @@ body{
   h2 {
     font-size: 3rem;
   }
+
+.container {
+justify-content: center;
+}

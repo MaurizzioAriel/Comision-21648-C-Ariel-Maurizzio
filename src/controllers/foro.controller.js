@@ -34,17 +34,16 @@ controllerForos.formCreateForo = (req, res) => {
 
 //PARA CREAR EL FORO
 controllerForos.postForo = async (req, res) => {
-  const { firstName, Titulo, Texto, Imagen } = req.body;
+  const {Titulo, Texto, Imagen } = req.body;
 
   //validacion para los datos del body
-  if (!firstName || !Titulo || !Texto || !Imagen)
+  if (!Titulo || !Texto || !Imagen)
     return res.status(400).send({
       message: "Por favor ingresar los datos correspondientes",
     });
   //manejamos el error con trycatch
   try {
     const foro = {
-      firstName: firstName,
       Titulo: Titulo,
       Texto: Texto,
       Imagen: Imagen,
@@ -64,7 +63,7 @@ controllerForos.postForo = async (req, res) => {
   }
 };
 
-//TODO: PUT PAGINA PARA EDITAR USUARIO
+//TODO: PUT PAGINA PARA EDITAR FORO
 controllerForos.formEditForo = async (req, res) => {
   const { id } = req.params;
   const foro = await Foro.findOne({ where: { id: id } });
