@@ -1,9 +1,10 @@
 <%- include("partials/head")%>
 
 <body>
+  <h1>Creacion de nuevo Foro</h1>
   <div class="container mt-4">
     <div class="card border-secondary ">
-      <div class="card-header">Nuevo Post</div>
+      <div class="card-header">Nuevo Foro</div>
       <div class="card-body">
         <form action="/saveForo" method="post">
           <div class="mb-3">
@@ -11,8 +12,8 @@
             <input
               type="text"
               class="form-control"
-              id="firstName"
-              name="firstName"
+              id="Titulo"
+              name="Titulo"
               placeholder="Titulo del post"
               tabindex="1"
               required

@@ -34,17 +34,16 @@ controllerForos.formCreateForo = (req, res) => {
 
 //PARA CREAR EL FORO
 controllerForos.postForo = async (req, res) => {
-  const { firstName, Titulo, Texto, Imagen } = req.body;
+  const {Titulo, Texto, Imagen } = req.body;
 
   //validacion para los datos del body
-  if (!firstName || !Titulo || !Texto || !Imagen)
+  if (!Titulo || !Texto || !Imagen)
     return res.status(400).send({
       message: "Por favor ingresar los datos correspondientes",
     });
   //manejamos el error con trycatch
   try {
     const foro = {
-      firstName: firstName,
       Titulo: Titulo,
       Texto: Texto,
       Imagen: Imagen,
@@ -56,7 +55,6 @@ controllerForos.postForo = async (req, res) => {
     } else {
       const newforo = await Foro.create(foro);
       return res.redirect("/foro");
-      //res.send({ message: "Usuario creado con exito" });
     }
   } catch (error) {
     console.error(error);
@@ -64,7 +62,7 @@ controllerForos.postForo = async (req, res) => {
   }
 };
 
-//TODO: PUT PAGINA PARA EDITAR USUARIO
+//TODO: PUT PAGINA PARA EDITAR FORO
 controllerForos.formEditForo = async (req, res) => {
   const { id } = req.params;
   const foro = await Foro.findOne({ where: { id: id } });
@@ -76,23 +74,23 @@ controllerForos.formEditForo = async (req, res) => {
 };
 
 controllerForos.putForo = async (req, res) => {
-  const { firstName, email, id } = req.body;
-  //validación de que no mande el dato del nombre para actualizar
-  if (!firstName || !email) {
+  const { Titulo, Texto} = req.body;
+  
+  if (!Titulo || !Texto ) {
     return res.status(404).send({
       message:
-        "Es necesario que el parametro firstName o LastName tenga información para actualizar",
+        "Es necesario que el parametro Titulo o Texto tengan información para actualizar",
     });
   }
   const updateForo = Foro.update(
     {
-      firstName: firstName,
-      email: email,
+      Titulo: Titulo,
+      Texto: Texto,
     },
     { where: { id: id } }
   );
   return res.redirect("/foro");
-  //res.send({ message: "Usuario editado con exito" });
+  //res.send({ message: "Foro editado con exito" });
 };
 
 //TODO:DELETE
