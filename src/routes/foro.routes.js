@@ -8,9 +8,6 @@ const Foro = require("../models/foro.models");
 //ruta GET ALL FOROS
 foroRoutes.get("/foro", controllerForos.getAllForos);
 
-//ruta GET USER BY ID
-// userRoutes.get("/user/:id", controllerUsers.getUserById);
-
 //ruta POST (crear foro)
 foroRoutes.get("/createForo", controllerForos.formCreateForo);
 foroRoutes.post("/saveForo", controllerForos.postForo);

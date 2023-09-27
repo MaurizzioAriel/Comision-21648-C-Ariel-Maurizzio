@@ -4,7 +4,7 @@
 <body>
   <div class="container mt-4">
     <div class="card border-secondary ">
-      <div class="card-header">Nuevo Post</div>
+      <div class="card-header">Editar Post</div>
       <div class="card-body">
         <form action="/updateForo" method="post">
           <div class="mb-3">
@@ -32,7 +32,7 @@
               name="Imagen"
               placeholder="url de la imagen"
               tabindex="2"
-              required
+
             />
           <button type="submit" class="btn btn-primary mt-4" tabindex="3">
             Guardar
@@ -42,6 +42,7 @@
       </div>
     </div>
   </div>
+  <% } %>
 </body>
 
 <%- include("partials/footer")%>

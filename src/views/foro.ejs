@@ -9,18 +9,18 @@
       <a href="/" class="btn btn-outline-success mt-4"
         ><i class='bx bxs-home bx-lg'></i></a>
     <% results.forEach((foro)=>{%>
-    <div class="card border-secondary mt-4" style="max-width: 800px;">
+    <div class="card border-secondary mt-4" style="max-width: 1000px;">
       <div class="row g-0">
         <div class="col-md-4">
           <img src="<%=foro.Imagen%>" class="img-fluid rounded-start" alt="...">
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <h5 class="card-title" aria-placeholder="Titulo del post"> <%=foro.Titulo%></h5>
+            <h5 class="card-title" aria-placeholder="Titulo del post"><%=foro.Titulo%></h5>
             <p class="card-text"><%=foro.Texto%></p>
             <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
             <a href="/editForo<%= foro.id %>" class="btn btn-primary">Editar</a>
-            <a href="/deleteForo/<%= foro.id %>" class="btn btn-danger">ELIMINAR</a>
+            <a href="/deleteForo/<%= foro.id %>" class="btn btn-danger" onclick="alert('¿Estás seguro de que deseas eliminar?')">ELIMINAR</a>
           </div>
         </div>
       </div>

@@ -36,6 +36,6 @@ body{
     font-size: 3rem;
   }
 
-.container {
-justify-content: center;
+.card {
+margin: auto;
 }
