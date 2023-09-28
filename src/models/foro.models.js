@@ -1,5 +1,6 @@
 const { DataTypes } = require("sequelize");
 const { sequelize } = require("../database/db");
+const dataTypes = require("sequelize/lib/data-types");
 
 const Foro = sequelize.define(
   "Foro",
@@ -14,6 +15,9 @@ const Foro = sequelize.define(
     },Imagen: {
       type: DataTypes.STRING,
       // allowNull defaults to trues
+    },
+    createdAt:{
+      type: DataTypes.STRING,
     },
   },
   {

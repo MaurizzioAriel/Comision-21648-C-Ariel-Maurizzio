@@ -49,6 +49,19 @@
 
             />
           </div>
+          <div>
+            <label for="foro" class="form-label">Fecha de Creacion</label>
+            <input
+              type="datetime-local"
+              class="form-control"
+              id="Fecha de Creacion"
+              name="Fecha de Creacion"
+              value="<%=foro.createdAt%>"
+              placeholder="Ingresa la fecha"
+              tabindex="4"
+              required
+            />
+          </div>
           <button type="submit" class="btn btn-primary mt-4" >
             Guardar
           </button>

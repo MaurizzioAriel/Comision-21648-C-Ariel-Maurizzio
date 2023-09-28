@@ -34,10 +34,10 @@ controllerForos.formCreateForo = (req, res) => {
 
 //PARA CREAR EL FORO
 controllerForos.postForo = async (req, res) => {
-  const {Titulo, Texto, Imagen } = req.body;
+  const {Titulo, Texto, Imagen, createdAt } = req.body;
 
   //validacion para los datos del body
-  if (!Titulo || !Texto || !Imagen)
+  if (!Titulo || !Texto || !Imagen || !createdAt)
     return res.status(400).send({
       message: "Por favor ingresar los datos correspondientes",
     });
@@ -47,6 +47,7 @@ controllerForos.postForo = async (req, res) => {
       Titulo: Titulo,
       Texto: Texto,
       Imagen: Imagen,
+      createdAt: createdAt,
     };
     if (!foro) {
       return res
@@ -72,7 +73,7 @@ controllerForos.formEditForo = (req, res) =>{
 
 controllerForos.formEditForo = async (req, res) => {
   const { id } = req.params;
-  const {Titulo, Texto, Imagen} = req
+  const {Titulo, Texto, Imagen, createdAt} = req
 
   const foro = await Foro.findOne({ where: { id: id } });
 
@@ -84,7 +85,7 @@ controllerForos.formEditForo = async (req, res) => {
 };
 
 controllerForos.putForo = async (req, res) => {
-  const { Titulo, Texto, Imagen, id} = req.body;
+  const { Titulo, Texto, Imagen, createdAt, id} = req.body;
   
   if (!Titulo || !Texto || !Imagen ) {
     return res.status(404).send({
@@ -97,6 +98,7 @@ controllerForos.putForo = async (req, res) => {
       Titulo: Titulo,
       Texto: Texto,
       Imagen : Imagen,
+      createdAt: createdAt,
     },
     { where: { id: id } }
   );
