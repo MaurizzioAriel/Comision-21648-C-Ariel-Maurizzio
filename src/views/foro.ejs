@@ -11,6 +11,11 @@
         ><i class='bx bxs-home bx-lg'></i></a>
     <% results.forEach((foro)=>{%>
     <div class="card border-secondary mt-4" style="max-width: 1000px;">
+      <thead>
+        <tr>
+          <th scope="col">N°</th>
+        </tr>
+      </thead>
       <div class="row g-0">
         <div class="col-md-4">
           <img src="<%=foro.Imagen%>" class="img-fluid rounded-start" alt="..." width="300px" height="200px">
@@ -19,7 +24,7 @@
           <div class="card-body">
             <h5 class="card-title" aria-placeholder="Titulo del post"> <%=foro.Titulo%></h5>
             <p class="card-text"><%=foro.Texto%></p>
-            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+            <p class="datetime-local"><small class="text-body-secondary"><%=foro.createdAt%></small></p>
             <a href="/editForo/<%= foro.id %>" class="btn btn-primary"
               >EDITAR</a
             >
