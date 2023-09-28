@@ -2,7 +2,7 @@
 
 <% if(foro) { %>
 <body>
-  <h2>Edicion del foro</h2>
+  <h2 style="color: white;">Edicion del foro</h2>
   <div class="container mt-4">
     <div class="card border-secondary ">
       <div class="card-header">Editar Foro</div>
@@ -54,8 +54,8 @@
             <input
               type="datetime-local"
               class="form-control"
-              id="Fecha de Creacion"
-              name="Fecha de Creacion"
+              id="createdAt"
+              name="createdAt"
               value="<%=foro.createdAt%>"
               placeholder="Ingresa la fecha"
               tabindex="4"
