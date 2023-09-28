@@ -29,7 +29,7 @@ controllerForos.getAllForos = async (req, res) => {
 
 //TODO: POST: PAGINA DE INICIO
 controllerForos.formCreateForo = (req, res) => {
-  res.render("createForo", { titleCreateForo: "Nuevo Post" });
+  res.render("createForo", { titleCreateForo: "Nuevo Foro" });
 };
 
 //PARA CREAR EL FORO
@@ -55,6 +55,7 @@ controllerForos.postForo = async (req, res) => {
     } else {
       const newforo = await Foro.create(foro);
       return res.redirect("/foro");
+
     }
   } catch (error) {
     console.error(error);
@@ -63,20 +64,29 @@ controllerForos.postForo = async (req, res) => {
 };
 
 //TODO: PUT PAGINA PARA EDITAR FORO
+
+controllerForos.formEditForo = (req, res) =>{
+  res.render ("editForo");
+};
+
+
 controllerForos.formEditForo = async (req, res) => {
   const { id } = req.params;
+  const {Titulo, Texto, Imagen} = req
+
   const foro = await Foro.findOne({ where: { id: id } });
+
   console.log(foro);
   res.render("editForo", {
-    titleEditForo: "Editar Post",
+    titleEditForo: "Editar Foro",
     foro: foro,
   });
 };
 
 controllerForos.putForo = async (req, res) => {
-  const { Titulo, Texto} = req.body;
+  const { Titulo, Texto, Imagen, id} = req.body;
   
-  if (!Titulo || !Texto ) {
+  if (!Titulo || !Texto || !Imagen ) {
     return res.status(404).send({
       message:
         "Es necesario que el parametro Titulo o Texto tengan información para actualizar",
@@ -86,6 +96,7 @@ controllerForos.putForo = async (req, res) => {
     {
       Titulo: Titulo,
       Texto: Texto,
+      Imagen : Imagen,
     },
     { where: { id: id } }
   );

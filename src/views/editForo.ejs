@@ -2,39 +2,54 @@
 
 <% if(foro) { %>
 <body>
+  <h2>Edicion del foro</h2>
   <div class="container mt-4">
     <div class="card border-secondary ">
-      <div class="card-header">Editar Post</div>
+      <div class="card-header">Editar Foro</div>
       <div class="card-body">
         <form action="/updateForo" method="post">
+          <input id="id" name="id" value="<%= foro.id %>" hidden />
           <div class="mb-3">
             <label for="foro" class="form-label">Titulo</label>
             <input
               type="text"
               class="form-control"
-              id="<%=foro.Titulo%>"
+              id="Titulo"
               name="Titulo"
+              value="<%=foro.Titulo%>"
               placeholder="Titulo del post"
               tabindex="1"
               required
             />
           </div>
-          <div class="input-group mt-4">
-            <span class="input-group-text">Ingresa el texto</span>
-            <textarea class="form-control" aria-label="With textarea" id="<%=foro.Texto%>" name="Texto" placeholder="Escribi aqui"  tabindex="2"></textarea>
+          <div class="mb-3">
+            <label for="foro" class="form-label">Texto</label>
+            <input
+              type="text"
+              class="form-control"
+              id="Texto"
+              name="Texto"
+              value="<%=foro.Texto%>"
+              placeholder="ingresa tu texto aqui"
+              tabindex="2"
+              style = "height: 100px;"
+              required
+            />
           </div>
-          <div class="mt-4">
+          <div class="mb-3">
             <label for="foro" class="form-label">Imagen</label>
             <input
               type="text"
               class="form-control"
-              id="<%=foro.Imagen%>"
+              id="Imagen"
               name="Imagen"
+              value="<%=foro.Imagen%>"
               placeholder="url de la imagen"
-              tabindex="2"
+              tabindex="3"
 
             />
-          <button type="submit" class="btn btn-primary mt-4" tabindex="3">
+          </div>
+          <button type="submit" class="btn btn-primary mt-4" >
             Guardar
           </button>
           <a href="/foro" class="btn btn-secondary mt-4 ">Cancelar</a>
