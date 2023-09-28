@@ -1,21 +1,21 @@
 body{
     font-family: 'Roboto Slab', serif;
-;
-}
-
-.boton-inicio{
-    display: flex;
-    justify-content: center;
-}
-
-.libro {
     background-image: url(https://infodiario.es/wp-content/uploads/2019/01/libro-en-blanco-768x549.jpg);
     height: 450px;
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: 2rem;
     position: relative;
-  }
+;
+}
+h1 {
+  text-align: center;
+}
+.boton-inicio{
+    display: flex;
+    justify-content: center;
+}
+
 
   h2 {
     font-size: 3rem;
@@ -38,4 +38,12 @@ body{
 
 .card {
 margin: auto;
+}
+
+.h2 {
+  text-align: center;
+}
+
+.h1 {
+  text-align: center;
 }
